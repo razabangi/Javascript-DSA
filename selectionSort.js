@@ -1,28 +1,29 @@
-let arr = [1,5,3,2,4,6,8,7];
+let arr = [5,1,3,4,8,2,6];
 
-function selectionSort(arr) {  
+function selectionSort(arr) {
   for(let i = 0; i < arr.length; i++) {
-    let maxIndex = findMax(arr, i, arr.length - 1);
-    swap(arr, maxIndex, i);
+    let last = arr.length - i - 1;
+    let maxIndex = findMaxIndex(arr, 0, last);
+    swap(arr, maxIndex, last);
   }
 }
 
-function swap(arr, start, end) {
-  let temp = arr[start];
-  arr[start] = arr[end];
-  arr[end] = temp;
+function swap(arr, first, last) {
+    let temp = arr[first];
+    arr[first] = arr[last];
+    arr[last] = temp;
 }
 
-function findMax(arr, start, end) {
-  let maxIndex = start;
+function findMaxIndex(arr, first, last) {
+  let max = first;
 
-  for(let i = start + 1; i <= end; i++) {
-    if (arr[i] < arr[maxIndex]) {
-      maxIndex = i;
+  for(let i = first; i <= last; i++) {
+    if (arr[max] < arr[i]) {
+      max = i;
     }
   }
 
-  return maxIndex;
+  return max;
 }
 
 console.log(arr);
