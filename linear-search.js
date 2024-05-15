@@ -29,3 +29,21 @@ function findMin(arr) {
 }
 
 console.log(findMin(arrForFindMin));
+
+
+// ==========================================
+// find index
+let arrForFindIndex = [8,4,15,16,18,20,7,9,10,5,1,3];
+let targetValueForFindIndex = 9;
+
+function findIndex(arr, target) {
+  for(let i = 0; i < arr.length; i++) {
+    if (target === arr[i]) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+console.log(findIndex(arrForFindIndex, targetValueForFindIndex));
