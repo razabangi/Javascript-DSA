@@ -9,5 +9,4 @@ function trianglePattern(num) {
   }
 }
 
-
 trianglePattern(5);
