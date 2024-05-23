@@ -47,3 +47,29 @@ function findIndex(arr, target) {
 }
 
 console.log(findIndex(arrForFindIndex, targetValueForFindIndex));
+
+
+// ==================================================
+// find index from 2D array
+
+let arr = [
+  [1,2,5,9,10],
+  [8,7,4,15],
+  [16,18,21,26,51]
+]
+
+let target = 26;
+
+function getIndexFrom2DArray(arr, target) {
+  for(let row = 0; row < arr.length; row++) {
+    for(let col = 0; col < arr[row].length; col++) {
+      if (target === arr[row][col]) {
+        return {"row": row, "column": col};
+      }
+    }
+  }
+
+  return "not found";
+}
+
+console.log(getIndexFrom2DArray(arr, target));
